@@ -1,0 +1,326 @@
+/* CSS Document */
+@keyframes rotate-disk {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes rotate-disk{
+	0%{
+		transform:rotateZ(0deg);
+	}
+	100%{
+		transform:rotateZ(360deg);
+	}
+}
+.play_btn{
+	cursor:pointer;
+}
+.bg {
+    background: #a0a0a0 center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 110%;
+    width: 105%;
+    margin: -5%;
+    background-size: cover;
+    filter: url(blur.svg#blur);
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=20, MakeShadow=false); /* IE6~IE9 */
+    z-index: -1;
+}
+
+.disk-bg {
+    width: 282px;
+    height: 282px;
+    position: absolute;
+    left: 50%;
+    top: 64px;
+    margin: 0px -141px;
+    background-color: rgba(251, 251, 251, 0.08);
+    border-radius: 141px;
+}
+
+.disk-cover {
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    left: 50%;
+    top: 65px;
+    margin: 0% -140px;
+}
+
+.disk-cover-animation {
+    animation: rotate-disk 20s infinite normal linear;
+    animation-play-state:paused;
+    -webkit-animation: rotate-disk 20s infinite normal linear;
+    -webkit-animation-play-state: paused;
+}
+
+.disk-transition {
+    transition: left 0.8s ease-in-out;
+    -webkit-transition: left 0.8s ease-in-out;
+}
+
+.disk-cover img {
+    display: block;
+    width: 100%;
+}
+
+.disk-cover .album {
+    width: 68%;
+	height:68%;
+    margin: 16%;
+}
+
+.disk-cover .disk-border {
+    position: absolute;
+    top: 0px;
+}
+
+.title {
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 12%;
+    width: 100%;
+    z-index: 11;
+    background-color: rgba(253, 253, 253, 0.05);
+}
+
+.title .music-info {
+	font-family:"agency fb";
+	font-size: 33px;
+	box-sizing: border-box;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.play-board {
+    position: absolute;
+    overflow: hidden;
+    top: 12%;
+    width: 100%;
+    height: 88%;
+    color: white;
+}
+.play-needle {
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    margin: 0px -12px;
+    z-index: 10;
+    width: 100px;
+    transform-origin: 20px 20px;
+    transition: transform 0.4s;
+    -webkit-transform-origin: 20px 20px;
+    -webkit-transition: -webkit-transform 0.4s;
+}
+.pause-needle {
+    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+}
+
+.resume-needle {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+
+/*控制板*/
+.control {
+    position: absolute;
+    align: center;
+    width: 400px;
+    bottom: 10px;
+    left: 50%;
+    margin: 0px -175px;
+}
+.control .loop{
+	color:#fff;
+	position:absolute;
+	top:54px;
+	left:22px;
+	font-size:18px;
+}
+.control .c-btn {
+    cursor: pointer;
+    background-position:center;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    margin: 20px 10px;
+	display:inline-block;
+}
+
+.control .c-btn.pre {
+    background-image: url(../images/play_btn_prev.png);
+}
+
+.control .c-btn.play, .c-btn.pause {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.control .c-btn.play {
+    background-image: url(../images/play_rdi_btn_play.png);
+}
+
+.control .c-btn.pause {
+    background-image: url(../images/play_rdi_btn_pause.png);
+}
+
+.control .c-btn.next {
+    background-image: url(../images/play_btn_next.png);
+}
+
+.control .c-btn.list-btn,.control .c-btn.loop-btn {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 30px;
+}
+
+.control .c-btn.list-btn{
+    background-image: url(../images/play_icn_src.png);
+}
+
+.control .c-btn.loop-btn {
+    position: relative;
+    background-image: url(../images/play_icn_loop.png);
+}
+
+.control .c-btn.loop-btn.active:after {
+    content: '1';
+    position: absolute;
+    top: 14px;
+    font-size: 12px;
+    left: 14px;
+}
+
+/*进度条*/
+.process {
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    bottom: 100px;
+    margin: 0px -175px;
+    left: 50%;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.process .process-bar {
+    position: absolute;
+    left: 36px;
+    width: 280px;
+    margin-top: 5px;
+    background-color: #615D5C;
+	cursor:pointer;
+}
+
+.process-bar .rdy {
+    background-color: #B1ADAC;
+    height: 2px;
+
+}
+
+.process-bar .cur {
+    background-color: #FB0D0D;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cur .process-btn {
+    cursor: pointer;
+    background-image: url(../images/process_btn.png);
+    background-size: cover;
+    position: absolute;
+    top: -9px;
+    right: -13px;
+    width: 22px;
+    height: 22px;
+    margin-left: -11px;
+}
+.process > span:first-child {
+    position: absolute;
+    left: 0px;
+}
+.process > span:last-child {
+    position: absolute;
+    right: 0px;
+}
+.playlist{
+	height:100%;
+	width:400px;
+	overflow:auto;
+	position:absolute;
+	right:-400px;
+	background-image: url('../images/bg.jpg');
+	background-repeat: repeat;
+	border-radius: 10px;
+	opacity: 0.5;
+}
+.playlist .list-title{
+	font-family: "agency fb";
+	margin-top: 10px;
+	margin-bottom: -10px;
+	color:#737373;
+	font-size: 30px;
+	text-align: center;
+	height:60px;
+}
+.playlist .list-Content{
+	font-family: "agency fb";
+	font-size:20px;
+	color:#fff;
+	list-style: none;
+}
+.playlist .list-Content li{
+	height:40px;
+	cursor:pointer;
+	overflow: hidden;
+	border-top: 1px solid #B1ADAC;
+	padding-left: 35px;
+	padding-top: 9px;
+	padding-bottom: 5px;
+}
+.playlist .list-Content li:hover{
+	color:#AFD9EE;
+	transition-duration: 0.2s;
+}
+.playlist .list-Content span{
+	
+}
+.active{
+	color:#C1E2B3;
+}
+.song-play{
+	position: absolute;
+	margin-left:-30px;
+	margin-top:5px;
+	background-image: url(../images/song_play_icon.png);
+	height:22px;
+	width:25px;
+}
+.lyric-content{
+	position:absolute;
+	overflow:hidden;
+	height:50%;
+	width:400px;
+	left:0px;
+	top:20%;
+}
+.lyric-content .lyric{
+	text-align:center;
+	font-size:20px;
+	font-family: "微软雅黑";
+	margin-top:100px;
+}

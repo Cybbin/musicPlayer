@@ -1,0 +1,61 @@
+` <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>musicplayer</title>
+<link href="css/test.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="./js/test.js"></script>
+</head>
+<body>
+ <div class="title">
+        <div class="music-info">
+            <div id="song"></div>
+            <div id="singer"></div>
+        </div>
+</div>
+
+  <div class="bg"></div>
+  <div class="play-board" onClick="cyb.playboardclick()">
+  	<img class="play-needle pause-needle" id="needle" src="./images/play_needle.png"/>
+  	<div id="disk" class="disk-cover disk-cover-animation" >
+            <img class="album"/>
+            <img class="disk-border" src="./images/play_disc.png"/>
+    </div>
+    
+    <div class="footer">
+    	<div class="process" id="process">
+        	<span id="currentTime">00:00</span>
+            <div class="process-bar" id="process-bar">
+            	<div id="rdy" class="rdy"></div>
+                <div id="processCur" class="cur">
+                    <span id="processBtn" class="process-btn c-btn"></span>
+                </div>
+        	</div>
+            <span id="totalTime">00:00</span>
+        </div>
+  		<div class="control" id="control">
+  			<div class="loop" style="display:none;">1</div>
+    		<span class="loop-btn c-btn" onClick="cyb.loop()"></span>
+  			<span class="pre c-btn" onClick="cyb.pre()"></span>
+  			<span class="play c-btn" onClick="cyb.play()"></span>
+  			<span class="pause c-btn" onClick="cyb.pause()" style="display: none;"></span>
+  			<span class="next c-btn" onClick="cyb.next()" ></span>
+  			<span class="list-btn c-btn" onClick="cyb.showList()"></span>
+  		</div>
+    </div>
+    <div class="playlist" id="playlist">
+    	<div class="list-title">
+    		播放列表(<span id="playlistCount">0</span>)
+    	</div>
+    	<div class="list-Content" id="list-Content"></div>
+    </div>
+    <div id="lyric-content" class="lyric-content">
+    	<div id="lyric" class="lyric">
+    		
+    	</div>
+    </div>
+  	<audio id="player"></audio>
+  </div>
+</body>
+</html>
